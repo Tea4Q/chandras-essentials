@@ -1,17 +1,19 @@
-"use client";
+import Image from "next/image";
+import Link from "next/link";
+import Header from "./components/Header";
 
 export default function ChandrasEssentialsHomepage() {
   const products = [
     {
       name: "MySeedBook",
       description:
-        "A garden planning and seed inventory app that helps growers organize, track, and grow with confidence.",
+        "Catalog your seeds, track suppliers, get weather-based planting recommendations, and plan your full growing season. Free on Google Play, with Premium features for serious growers.",
       tag: "Garden planning",
     },
     {
       name: "Velvet Ladle",
       description:
-        "A recipe and kitchen companion built to make collecting, saving, and using recipes feel effortless.",
+        "Save recipes from any website, create your own, and build a personal cookbook that's actually yours. No ads, no subscriptions \u2014 just your recipes. Live on Google Play.",
       tag: "Kitchen workflow",
     },
     {
@@ -31,35 +33,7 @@ export default function ChandrasEssentialsHomepage() {
 
   return (
     <div className="min-h-screen bg-[#F7F3E8] text-[#12385C]">
-      <header className="sticky top-0 z-30 border-b border-[#12385C]/10 bg-[#F7F3E8]/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#12385C]/15 bg-white shadow-sm">
-              <div className="relative h-6 w-6">
-                <div className="absolute left-0 top-1 h-4 w-3 rounded-t-full rounded-b-sm border-2 border-[#12385C] border-b-[1.5px] bg-[#7FB77E]/70" />
-                <div className="absolute right-0 top-1 h-4 w-3 rounded-t-full rounded-b-sm border-2 border-[#12385C] border-b-[1.5px] bg-[#5FA8A8]/70" />
-                <div className="absolute left-1/2 top-0 h-6 w-[2px] -translate-x-1/2 rounded-full bg-[#12385C]" />
-              </div>
-            </div>
-            <div>
-              <p className="font-serif text-xl tracking-wide">Chandra&apos;s Essentials</p>
-              <p className="text-xs uppercase tracking-[0.24em] text-[#12385C]/60">SaaS studio & consulting</p>
-            </div>
-          </div>
-
-          <nav className="hidden items-center gap-8 text-sm md:flex">
-            <a href="#products" className="transition hover:text-[#5FA8A8]">Products</a>
-            <a href="#services" className="transition hover:text-[#5FA8A8]">Services</a>
-            <a href="#about" className="transition hover:text-[#5FA8A8]">About</a>
-            <a
-              href="#contact"
-              className="rounded-full bg-[#12385C] px-4 py-2 text-white transition hover:opacity-90"
-            >
-              Contact
-            </a>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       <main>
         <section className="relative overflow-hidden">
@@ -106,68 +80,15 @@ export default function ChandrasEssentialsHomepage() {
               </div>
             </div>
 
-            <div className="relative z-10">
-              <div className="rounded-[2rem] border border-[#12385C]/10 bg-white/70 p-4 shadow-2xl shadow-[#12385C]/10 backdrop-blur">
-                <div className="rounded-[1.5rem] bg-[#E6D8B5] p-6">
-                  <div className="rounded-[1.5rem] border-2 border-[#12385C]/20 bg-[#E6D8B5] p-6 shadow-inner">
-                    <div className="mb-5 text-center">
-                      <p className="font-serif text-3xl text-[#12385C]">Chandra&apos;s Essentials</p>
-                    </div>
-
-                    <div className="mx-auto max-w-md rounded-[1.75rem] border-[3px] border-[#12385C] bg-[#E6D8B5] p-4">
-                      <div className="mx-auto mb-3 h-4 w-40 rounded-t-md border-[3px] border-[#12385C] bg-[#7FB77E]/50" />
-                      <div className="mx-auto mb-5 grid h-16 w-56 grid-cols-6 overflow-hidden rounded-t-2xl border-[3px] border-[#12385C] bg-white">
-                        {Array.from({ length: 6 }).map((_, i) => (
-                          <div
-                            key={i}
-                            className={i % 2 === 0 ? "bg-[#12385C]" : "bg-[#5FA8A8]/70"}
-                          />
-                        ))}
-                      </div>
-
-                      <div className="grid grid-cols-[1fr_auto_1fr] items-end gap-4">
-                        <div className="rounded-2xl border-[3px] border-[#12385C] bg-[#5FA8A8]/20 p-4">
-                          <div className="relative flex h-40 items-end justify-center rounded-xl bg-[#12385C]/90 p-3">
-                            <div className="absolute right-3 top-3 h-6 w-6 rotate-12 border-t-2 border-r-2 border-white/70" />
-                            <div className="absolute bottom-4 left-4 h-14 w-8 rounded-t-full rounded-b-md border-2 border-[#7FB77E] bg-[#7FB77E]/35" />
-                            <div className="absolute bottom-8 left-14 h-20 w-4 rotate-[-20deg] rounded-full bg-[#F7F3E8]" />
-                            <div className="absolute bottom-8 left-20 h-20 w-4 rotate-[20deg] rounded-full bg-[#F7F3E8]" />
-                            <div className="absolute bottom-3 left-10 h-8 w-12 rounded-t-full border-2 border-[#C47F4C] bg-[#C47F4C]/80" />
-                          </div>
-                        </div>
-
-                        <div className="grid h-44 w-24 place-items-center rounded-t-3xl border-[3px] border-[#12385C] bg-[#12385C] text-white">
-                          <div className="grid gap-2 text-center text-xs">
-                            <div className="mx-auto h-9 w-1 rounded-full bg-white/70" />
-                            <div className="flex gap-2">
-                              <div className="h-2 w-2 rounded-full bg-white/70" />
-                              <div className="h-2 w-2 rounded-full bg-white/70" />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="rounded-2xl border-[3px] border-[#12385C] bg-[#7FB77E]/20 p-4">
-                          <div className="relative flex h-40 items-end justify-center rounded-xl bg-[#12385C]/90 p-3">
-                            <div className="absolute right-3 top-3 h-6 w-6 rotate-12 border-t-2 border-r-2 border-white/70" />
-                            <div className="absolute bottom-6 left-5 h-16 w-10 rounded-t-full rounded-b-sm bg-[#D97A3A]" />
-                            <div className="absolute bottom-20 left-8 h-8 w-5 rounded-full bg-[#7FB77E]" />
-                            <div className="absolute bottom-5 left-20 h-10 w-10 rounded-full border-2 border-white/80" />
-                            <div className="absolute bottom-5 left-[4.9rem] h-2 w-10 rounded-full bg-white/80" />
-                            <div className="absolute bottom-4 left-11 flex gap-1">
-                              <div className="h-5 w-5 rounded-full bg-[#C65D3A]" />
-                              <div className="h-5 w-5 rounded-full bg-[#D97A3A]" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="mt-4 flex items-center justify-between px-2 text-sm uppercase tracking-[0.28em] text-[#12385C]/80">
-                        <span>ESTD</span>
-                        <span>1993</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div className="relative z-10 flex items-center justify-center">
+              <div className="rounded-[2rem] border border-[#12385C]/10 bg-white/70 p-6 shadow-2xl shadow-[#12385C]/10 backdrop-blur">
+                <Image
+                  src="/CE_Logo.png"
+                  alt="Chandra's Essentials logo"
+                  width={500}
+                  height={350}
+                  className="w-full max-w-md rounded-[1.5rem] object-contain"
+                />
               </div>
             </div>
           </div>
@@ -190,6 +111,7 @@ export default function ChandrasEssentialsHomepage() {
                 key={product.name}
                 className="group rounded-[2rem] border border-[#12385C]/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#12385C]/10"
               >
+
                 <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#E6D8B5] text-[#12385C] shadow-inner">
                   <div className="relative h-7 w-7">
                     <div className="absolute left-1/2 top-0 h-7 w-[2px] -translate-x-1/2 bg-[#12385C]" />
@@ -200,9 +122,18 @@ export default function ChandrasEssentialsHomepage() {
                 <p className="text-xs uppercase tracking-[0.28em] text-[#12385C]/50">{product.tag}</p>
                 <h3 className="mt-3 font-serif text-2xl">{product.name}</h3>
                 <p className="mt-3 leading-7 text-[#12385C]/70">{product.description}</p>
-                <a href="#contact" className="mt-6 inline-block text-sm font-medium text-[#5FA8A8] transition group-hover:translate-x-1">
+                <Link
+                  href={
+                    product.name === "MySeedBook"
+                      ? "/myseedbook"
+                      : product.name === "Velvet Ladle"
+                      ? "/velvet-ladle"
+                      : "#contact"
+                  }
+                  className="mt-6 inline-block text-sm font-medium text-[#5FA8A8] transition group-hover:translate-x-1"
+                >
                   Learn more →
-                </a>
+                </Link>
               </article>
             ))}
           </div>
