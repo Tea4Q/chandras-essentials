@@ -1,7 +1,25 @@
 {
-  "name": "chandrasessentials-web",
+  "name": "chandrasessentials",
   "version": "0.1.0",
   "private": true,
+  "description": "website for chandrasessentials saas",
+  "keywords": [
+    "app",
+    "pm",
+    "lifestyle"
+  ],
+  "homepage": "https://github.com/Tea4Q/chandras-essentials#readme",
+  "bugs": {
+    "url": "https://github.com/Tea4Q/chandras-essentials/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tea4Q/chandras-essentials.git"
+  },
+  "license": "ISC",
+  "author": "Chandra Skinner",
+  "type": "module",
+  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -214,6 +214,15 @@ export default function ChandrasEssentialsHomepage() {
           </div>
         </section>
       </main>
+
+      <footer className="border-t border-[#12385C]/10 bg-[#F7F3E8] px-6 py-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-between text-xs text-[#12385C]/50">
+          <p>© {new Date().getFullYear()} Chandra&apos;s Essentials</p>
+          <Link href="/privacy" className="transition hover:text-[#5FA8A8]">
+            Privacy Policy
+          </Link>
+        </div>
+      </footer>
     </div>
   );
 }
