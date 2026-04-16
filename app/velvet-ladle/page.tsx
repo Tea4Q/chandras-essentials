@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import Header from "../components/Header";
 
 export const metadata = {
@@ -67,12 +66,12 @@ export default function VelvetLadlePage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(196,127,76,0.14),transparent_36%),radial-gradient(circle_at_bottom_left,rgba(95,168,168,0.12),transparent_30%)]" />
           <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
             <div className="mx-auto max-w-3xl text-center">
-              <Link
+              <a
                 href="/#products"
                 className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#12385C]/15 bg-white/80 px-4 py-2 text-xs uppercase tracking-[0.28em] text-[#12385C]/60 shadow-sm transition hover:text-[#5FA8A8]"
               >
                 ← Back to Products
-              </Link>
+              </a>
 
               <div className="mx-auto mb-8 flex h-36 w-36 items-center justify-center rounded-[2rem] bg-white shadow-md ring-2 ring-[#C47F4C]/20 overflow-hidden">
                 <Image
