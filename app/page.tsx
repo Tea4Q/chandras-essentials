@@ -37,7 +37,7 @@ export default function ChandrasEssentialsHomepage() {
 
       <main>
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(95,168,168,0.18),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(127,183,126,0.16),transparent_28%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(95,168,168,0.18),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(127,183,126,0.16),transparent_28%)]" />
           <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 py-16 md:grid-cols-2 md:py-24">
             <div className="relative z-10">
               <p className="mb-4 inline-flex rounded-full border border-[#12385C]/15 bg-white/80 px-4 py-2 text-xs uppercase tracking-[0.28em] text-[#12385C]/70 shadow-sm">
@@ -199,13 +199,13 @@ export default function ChandrasEssentialsHomepage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href="mailto:hello@chandraskinner.com"
+                href="mailto:info@chandrasessentials.com"
                 className="rounded-full bg-white px-6 py-3 text-sm font-medium text-[#12385C] transition hover:opacity-90"
               >
-                Email Chandra
+                Email Chandra's Essentials
               </a>
               <a
-                href="https://www.chandraskinner.com"
+                href="https://www.chandrasessentials.com"
                 className="rounded-full border border-white/25 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10"
               >
                 Visit Website

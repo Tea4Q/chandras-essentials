@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import Header from "../components/Header";
+import FeedbackForm from "./FeedbackForm";
 
 export const metadata = {
   title: "MySeedBook Catalogue – Seed Collection & Garden Planning | Chandra's Essentials",
   description:
-    "MySeedBook Catalogue is the complete gardening companion. Catalog your seeds, track suppliers, get weather integration, and plan your entire growing season. Available on Google Play.",
+    "MySeedBook Catalogue is the complete gardening companion. Catalog your seeds, track suppliers, get weather integration, and plan your entire growing season. Available on Google Play and the App Store.",
 };
 
 const features = [
@@ -49,6 +50,45 @@ const features = [
   },
 ];
 
+const screenshots: { src: string; caption: string; label: string; description: string }[] = [
+  {
+    src: "/MySeedBook/Seed Inventory.png",
+    label: "Seed Inventory",
+    caption: "Your full collection at a glance",
+    description: "Every seed you own, catalogued with variety, type, supplier, and planting details.",
+  },
+  {
+    src: "/MySeedBook/Add Seed.png",
+    label: "Add a Seed",
+    caption: "Every detail, beautifully captured",
+    description: "Log variety, description, planting dates, harvest windows, and photos in seconds.",
+  },
+  {
+    src: "/MySeedBook/weather.png",
+    label: "Weather",
+    caption: "Real-time planting insights",
+    description: "Live conditions and a 7-day forecast tailored to help you decide exactly when to sow.",
+  },
+  {
+    src: "/MySeedBook/Events.png",
+    label: "Calendar",
+    caption: "Plan your full growing season",
+    description: "Planting reminders, harvest alerts, and crop rotation schedules all in one view.",
+  },
+  {
+    src: "/MySeedBook/supplierview2.png",
+    label: "Suppliers",
+    caption: "Track your seed sources",
+    description: "Save supplier names, websites, and contacts — and link each seed back to its source.",
+  },
+  {
+    src: "/MySeedBook/Multiple_Images.png",
+    label: "Photos",
+    caption: "Attach multiple images",
+    description: "Document your seeds and garden progress with photos right inside each seed entry.",
+  },
+];
+
 export default function MySeedBookPage() {
   return (
     <div className="min-h-screen bg-[#F7F3E8] text-[#12385C]">
@@ -57,7 +97,7 @@ export default function MySeedBookPage() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(127,183,126,0.22),transparent_36%),radial-gradient(circle_at_bottom_left,rgba(95,168,168,0.14),transparent_30%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(127,183,126,0.22),transparent_36%),radial-gradient(circle_at_bottom_left,rgba(95,168,168,0.14),transparent_30%)]" />
           <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
             <div className="mx-auto max-w-3xl text-center">
               <Link
@@ -86,7 +126,7 @@ export default function MySeedBookPage() {
 
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
                 <a
-                  href="https://play.google.com/store/search?q=MySeedBook&c=apps&hl=en_US"
+                  href="https://play.google.com/store/apps/details?id=com.myseedbook.catalogue"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-[#12385C] px-8 py-3.5 text-sm font-medium text-white shadow-lg shadow-[#12385C]/15 transition hover:-translate-y-0.5 hover:opacity-95"
@@ -94,9 +134,15 @@ export default function MySeedBookPage() {
                   <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a2 2 0 0 1-1.18-1.8V2.04A2 2 0 0 1 3.18.28l11.9 11.74-11.9 11.74zm13.09-8.43-2.9-2.87 2.9-2.87 3.27 1.87a1.6 1.6 0 0 1 0 2.99l-3.27 1.88zM4.44 22.7l9.5-9.38-2.27-2.24L4.44 22.7zM4.44 1.3l7.23 11.62-2.27 2.24L4.44 1.3z"/></svg>
                   Get it on Google Play
                 </a>
-                <span className="inline-flex items-center gap-2 rounded-full border border-[#12385C]/20 bg-white px-8 py-3.5 text-sm font-medium text-[#12385C]/50">
-                  iOS — Coming Soon
-                </span>
+                <a
+                  href="https://apps.apple.com/us/app/myseedbook/id6759670875"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#12385C]/20 bg-white px-8 py-3.5 text-sm font-medium text-[#12385C] shadow-lg shadow-[#12385C]/10 transition hover:-translate-y-0.5 hover:opacity-95"
+                >
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                  Download on the App Store
+                </a>
               </div>
             </div>
           </div>
@@ -107,8 +153,8 @@ export default function MySeedBookPage() {
           <div className="mx-auto grid max-w-5xl grid-cols-3 divide-x divide-[#12385C]/10 px-6 py-8 text-center">
             {[
               ["Built for", "Home & market gardeners"],
-              ["Platform", "Android · iOS soon"],
-              ["Status", "Live on Google Play"],
+              ["Platform", "Android · iOS"],
+              ["Status", "Google Play & App Store"],
             ].map(([label, value]) => (
               <div key={label} className="px-4">
                 <p className="text-xs uppercase tracking-[0.25em] text-[#12385C]/50">{label}</p>
@@ -146,45 +192,57 @@ export default function MySeedBookPage() {
           </div>
         </section>
 
-        {/* Visual mockup placeholder */}
-        <section className="bg-white/60 py-20">
-          <div className="mx-auto max-w-5xl px-6">
-            <div className="overflow-hidden rounded-[2rem] border border-[#12385C]/10 bg-[#E6D8B5] shadow-xl shadow-[#12385C]/8">
-              <div className="flex items-center gap-2 border-b border-[#12385C]/10 bg-white/50 px-6 py-4">
-                <div className="h-3 w-3 rounded-full bg-[#C65D3A]/70" />
-                <div className="h-3 w-3 rounded-full bg-[#D97A3A]/70" />
-                <div className="h-3 w-3 rounded-full bg-[#7FB77E]/70" />
-                <span className="ml-4 text-xs text-[#12385C]/40 uppercase tracking-widest">MySeedBook · Dashboard</span>
-              </div>
-              <div className="grid gap-4 p-8 md:grid-cols-3">
-                <div className="rounded-2xl bg-white p-5 shadow-sm md:col-span-2">
-                  <p className="text-xs uppercase tracking-widest text-[#12385C]/40">My Seeds</p>
-                  <p className="mt-1 font-serif text-2xl">48 varieties</p>
-                  <div className="mt-4 grid grid-cols-3 gap-3">
-                    {["Tomatoes", "Beans", "Squash", "Herbs", "Flowers", "Roots"].map((cat) => (
-                      <div key={cat} className="rounded-xl bg-[#7FB77E]/12 px-3 py-2 text-xs font-medium text-[#12385C]/70">
-                        {cat}
-                      </div>
-                    ))}
+        {/* Screenshots */}
+        <section className="relative overflow-hidden bg-[#F4F7F1] py-24">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,#7FB77E22,transparent_35%),radial-gradient(circle_at_bottom_right,#12385C22,transparent_35%)]" />
+          <div className="relative mx-auto max-w-7xl px-6">
+            <div className="mx-auto mb-16 max-w-3xl text-center">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#7FB77E]">MySeedBook Catalogue</p>
+              <h2 className="font-serif text-4xl leading-tight text-[#12385C] md:text-5xl">
+                Your garden, beautifully organised.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-[#12385C]/70">
+                Catalogue seeds, track suppliers, plan your season, and never miss a planting window.
+              </p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-3">
+              {screenshots.map((shot) => (
+                <figure
+                  key={shot.src}
+                  className="group relative overflow-hidden rounded-[2.5rem] bg-white p-4 shadow-2xl shadow-[#12385C]/10 transition duration-500 hover:-translate-y-2 hover:shadow-[#12385C]/20"
+                >
+                  <div className="absolute left-8 top-8 z-20 rounded-full bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#12385C] backdrop-blur-md">
+                    {shot.label}
                   </div>
-                </div>
-                <div className="flex flex-col gap-4">
-                  <div className="rounded-2xl bg-white p-5 shadow-sm">
-                    <p className="text-xs uppercase tracking-widest text-[#12385C]/40">Next to Plant</p>
-                    <p className="mt-1 font-serif text-lg">Arugula</p>
-                    <p className="text-xs text-[#7FB77E]">Window opens in 12 days</p>
+                  <div className="relative h-[520px] overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#F4F7F1] to-[#E6D8B5]">
+                    <Image
+                      src={shot.src}
+                      alt={shot.caption}
+                      fill
+                      className="object-cover object-top transition duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#12385C]/85 via-[#12385C]/10 to-transparent" />
+                    <figcaption className="absolute bottom-0 left-0 right-0 z-20 p-7">
+                      <h3 className="text-2xl font-bold text-white">{shot.caption}</h3>
+                      <p className="mt-2 text-sm leading-6 text-white/80">{shot.description}</p>
+                    </figcaption>
                   </div>
-                  <div className="rounded-2xl bg-white p-5 shadow-sm">
-                    <p className="text-xs uppercase tracking-widest text-[#12385C]/40">Beds Planned</p>
-                    <p className="mt-1 font-serif text-lg">6 of 8</p>
-                    <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-[#12385C]/10">
-                      <div className="h-full w-3/4 rounded-full bg-[#7FB77E]" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+                </figure>
+              ))}
             </div>
           </div>
+        </section>
+
+        {/* Feedback */}
+        <section id="feedback" className="mx-auto max-w-3xl px-6 py-20">
+          <div className="mb-10 text-center">
+            <p className="text-sm uppercase tracking-[0.25em] text-[#7FB77E]">Feedback</p>
+            <h2 className="mt-2 font-serif text-4xl">Help us grow better.</h2>
+            <p className="mt-4 text-lg leading-8 text-[#12385C]/70">
+              Found a bug, have a feature idea, or just want to share your experience? We&apos;d love to hear from you.
+            </p>
+          </div>
+          <FeedbackForm />
         </section>
 
         {/* Early access CTA */}
@@ -193,11 +251,11 @@ export default function MySeedBookPage() {
             <p className="text-sm uppercase tracking-[0.28em] text-white/60">Download Now</p>
             <h2 className="mt-2 font-serif text-4xl md:text-5xl">Your garden, catalogued.</h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">
-              MySeedBook Catalogue is live on Google Play. Download free and upgrade to Premium for weather integration, the advanced calendar, and unlimited seeds. iOS is in review — coming soon.
+              MySeedBook Catalogue is live on Google Play and the App Store. Download free and upgrade to Premium for weather integration, the advanced calendar, and unlimited seeds.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href="https://play.google.com/store/search?q=MySeedBook&c=apps&hl=en_US"
+                href="https://play.google.com/store/apps/details?id=com.myseedbook.catalogue"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-[#12385C] transition hover:opacity-90"

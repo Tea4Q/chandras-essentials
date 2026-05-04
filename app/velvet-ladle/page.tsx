@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Header from "../components/Header";
 
 export const metadata = {
@@ -46,13 +47,43 @@ const features = [
   },
 ];
 
-const screenshots: { src: string; caption: string }[] = [
-  { src: "/velvet-ladle/Title Page.jpg", caption: "Dashboard — your recipes at a glance" },
-  { src: "/velvet-ladle/favorites2.jpg", caption: "Keep all your recipes in one place" },
-  { src: "/velvet-ladle/Filter.jpg", caption: "Filter by cuisine, type, or ingredient" },
-  { src: "/velvet-ladle/nutrition.jpg", caption: "Nutrition details per serving" },
-  { src: "/velvet-ladle/import.jpg", caption: "Import recipes from any URL" },
-  { src: "/velvet-ladle/manual.jpg", caption: "Manually add your own recipes" },
+const screenshots: { src: string; caption: string; label: string; description: string }[] = [
+  {
+    src: "/velvet-ladle/recipe_dashboard.png",
+    label: "Dashboard",
+    caption: "Your recipes at a glance",
+    description: "See your saved recipes, favourites, and recent meals the moment you open the app.",
+  },
+  {
+    src: "/velvet-ladle/recipe_url.png",
+    label: "Recipe Url",
+    caption: "Save from any website",
+    description: "Paste any recipe URL and Velvet Ladle pulls in the full recipe automatically.",
+  },
+  {
+    src: "/velvet-ladle/recipe_list.png",
+    label: "Library",
+    caption: "Browse your full collection",
+    description: "All your recipes — family favourites, online finds, and originals — in one place.",
+  },
+  {
+    src: "/velvet-ladle/recipeView.png",
+    label: "Recipe View",
+    caption: "Details and instructions",
+    description: "Clean, easy-to-follow layout with every ingredient and step clearly presented.",
+  },
+  {
+    src: "/velvet-ladle/AppleSubScreenshot.png",
+    label: "IOS (coming soon)",
+    caption: "Available on the App Store",
+    description: "Download Velvet Ladle on mobile and iPad for a seamless cooking experience.",
+  },
+  {
+    src: "/velvet-ladle/Screenshot_20260414_222925_Velvet Ladle.png",
+    label: "Android",
+    caption: "Your kitchen companion",
+    description: "Live on Google Play — take your recipes anywhere you cook.",
+  },
 ];
 
 export default function VelvetLadlePage() {
@@ -63,15 +94,15 @@ export default function VelvetLadlePage() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(196,127,76,0.14),transparent_36%),radial-gradient(circle_at_bottom_left,rgba(95,168,168,0.12),transparent_30%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(196,127,76,0.14),transparent_36%),radial-gradient(circle_at_bottom_left,rgba(95,168,168,0.12),transparent_30%)]" />
           <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
             <div className="mx-auto max-w-3xl text-center">
-              <a
+              <Link
                 href="/#products"
                 className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#12385C]/15 bg-white/80 px-4 py-2 text-xs uppercase tracking-[0.28em] text-[#12385C]/60 shadow-sm transition hover:text-[#5FA8A8]"
               >
                 ← Back to Products
-              </a>
+              </Link>
 
               <div className="mx-auto mb-8 flex h-36 w-36 items-center justify-center rounded-[2rem] bg-white shadow-md ring-2 ring-[#C47F4C]/20 overflow-hidden">
                 <Image
@@ -125,26 +156,43 @@ export default function VelvetLadlePage() {
         </section>
 
         {/* Screenshots */}
-        <section className="mx-auto max-w-7xl px-6 py-20">
-          <div className="mb-12 text-center">
-            <p className="text-sm uppercase tracking-[0.25em] text-[#C47F4C]">App Screens</p>
-            <h2 className="mt-2 font-serif text-4xl">See it in action.</h2>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {screenshots.map((shot) => (
-              <figure key={shot.src} className="overflow-hidden rounded-[2rem] border border-[#12385C]/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#12385C]/8">
-                <div className="relative h-80 overflow-hidden bg-[#E6D8B5]">
-                  <Image
-                    src={shot.src}
-                    alt={shot.caption}
-                    fill
-                    className="object-cover object-top transition duration-500 hover:scale-105"
-                  />
-                </div>
-                <figcaption className="px-6 py-4 text-sm text-[#12385C]/60">{shot.caption}</figcaption>
-              </figure>
-            ))}
+        <section className="relative overflow-hidden bg-[#F7F1E8] py-24">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,#8B1E3F22,transparent_35%),radial-gradient(circle_at_bottom_right,#12385C22,transparent_35%)]" />
+          <div className="relative mx-auto max-w-7xl px-6">
+            <div className="mx-auto mb-16 max-w-3xl text-center">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#8B1E3F]">Velvet Ladle</p>
+              <h2 className="font-serif text-4xl leading-tight text-[#12385C] md:text-5xl">
+                Your recipe box, beautifully organised.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-[#12385C]/70">
+                Save recipes, search fast, and keep your kitchen inspiration in one elegant place.
+              </p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-3">
+              {screenshots.map((shot) => (
+                <figure
+                  key={shot.src}
+                  className="group relative overflow-hidden rounded-[2.5rem] bg-white p-4 shadow-2xl shadow-[#12385C]/10 transition duration-500 hover:-translate-y-2 hover:shadow-[#12385C]/20"
+                >
+                  <div className="absolute left-8 top-8 z-20 rounded-full bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#12385C] backdrop-blur-md">
+                    {shot.label}
+                  </div>
+                  <div className="relative h-[520px] overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#FFF9F1] to-[#E6D8B5]">
+                    <Image
+                      src={shot.src}
+                      alt={shot.caption}
+                      fill
+                      className="object-cover object-top transition duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#12385C]/85 via-[#12385C]/10 to-transparent" />
+                    <figcaption className="absolute bottom-0 left-0 right-0 z-20 p-7">
+                      <h3 className="text-2xl font-bold text-white">{shot.caption}</h3>
+                      <p className="mt-2 text-sm leading-6 text-white/80">{shot.description}</p>
+                    </figcaption>
+                  </div>
+                </figure>
+              ))}
+            </div>
           </div>
         </section>
 
